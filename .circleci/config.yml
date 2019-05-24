@@ -19,6 +19,6 @@ jobs:
           name: current
           command: pwd
       
-      -run:
+      - run:
           name: cloneの行方
           command: ls
