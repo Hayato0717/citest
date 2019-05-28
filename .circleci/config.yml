@@ -9,5 +9,5 @@ workflows:
       - aws-ecr/build-and-push-image:
           name: 'build-test'
           repo: '${ECR_REPO}'
-          tag: pushTest
+          tag: pushtest
             
