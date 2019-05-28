@@ -6,7 +6,6 @@ orbs:
   build&push:
     jobs:
       - aws-ecr/build-and-push-image
-          name: 'buid-test'
           repo: '${ECR_REPO}'
           tag: pushTest
           
