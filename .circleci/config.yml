@@ -1,11 +1,11 @@
-version: 2.1
 orbs:
   aws-ecr: circleci/aws-ecr@6.0.0
+version: 2.1
 
-  workflows:
-  build&push:
-    jobs:
-      - aws-ecr/build-and-push-image
-          repo: '${ECR_REPO}'
-          tag: pushTest
-          
+workflows:
+  "pushTest":
+      jobs:
+        - aws-ecr/build-and-push-image
+            repo: '${ECR_REPO}'
+            tag: pushTest
+            
