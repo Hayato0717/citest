@@ -1,24 +1,12 @@
-version: 2
-jobs:
-  build:
-    docker:
-      - image: centos:centos7
+version: 2.1
+orbs:
+  aws-ecr: circleci/aws-ecr@6.0.0
 
-    steps:
-      - checkout
-
-      - run:
-          name: Greeting
-          command: echo Hello, world.
-
-      - run:
-          name: Print the Current Time
-          command: date
-      
-      - run:
-          name: current
-          command: pwd
-      
-      - run:
-          name: cloneの行方
-          command: ls
+  workflows:
+  build&push:
+    jobs:
+      - aws-ecr/build-and-push-image
+          name: 'buid-test'
+          repo: '${ECR_REPO}'
+          tag: pushTest
+          
