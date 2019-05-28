@@ -4,8 +4,8 @@ version: 2.1
 
 workflows:
   "pushTest":
-      jobs:
-        - aws-ecr/build-and-push-image
-            repo: '${ECR_REPO}'
-            tag: pushTest
+    jobs:
+      - aws-ecr/build-and-push-image
+          repo: '${ECR_REPO}'
+          tag: pushTest
             
