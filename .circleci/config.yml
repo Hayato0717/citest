@@ -3,9 +3,10 @@ orbs:
 version: 2.1
 
 workflows:
-  "pushTest":
+  pushTest:
     jobs:
-      - aws-ecr/build-and-push-image
+      - aws-ecr/build-and-push-image:
+          name: 'build-test'
           repo: '${ECR_REPO}'
           tag: pushTest
             
