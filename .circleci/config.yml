@@ -4,10 +4,16 @@ version: 2.1
 
 #コメント11
 workflows:
-  pushTest:
+  #ECRにログイン
+  login:
+    jobs:
+      - aws-ecr/ecr-login
+        region: '${AWS_REGION}'
+  #ECRにイメージをpush
+  push:
     jobs:
       - aws-ecr/build-and-push-image:
-          name: 'build-test'
+          name: 'build-and-push'
           repo: '${ECR_REPO}'
           tag: pushtest
             
