@@ -8,7 +8,6 @@ workflows:
   login:
     jobs:
       - aws-ecr/ecr-login:
-        region: '${AWS_REGION}'
   #ECRにイメージをpush
   push:
     jobs:
