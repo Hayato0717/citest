@@ -5,10 +5,9 @@ version: 2.1
 #コメント11
 workflows:
   #ECRにログイン
-  login:
-    steps:
-      - run:
-        command: aws-ecr/ecr-login 
+  steps:
+    - run:
+      command: aws-ecr/ecr-login 
   #ECRにイメージをpush
   push:
     jobs:
