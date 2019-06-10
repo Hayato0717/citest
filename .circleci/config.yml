@@ -4,15 +4,11 @@ version: 2.1
 
 #コメント11
 workflows:
-  #ECRにログイン
-  steps:
-    - run:
-      command: aws-ecr/ecr-login 
   #ECRにイメージをpush
   push:
     jobs:
       - aws-ecr/build-and-push-image:
           name: 'build-and-push'
           repo: '${ECR_REPO}'
-          tag: pushtest
+          tag: '${REPO_TAG}'
             
